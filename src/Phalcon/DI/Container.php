@@ -2,6 +2,7 @@
 
 namespace VideoRecruit\Phalcon\DI;
 
+use Closure;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Di\ServiceInterface;
 use Phalcon\DiInterface;
@@ -53,6 +54,10 @@ class Container
 	 */
 	public function set($name, $definition, $shared = FALSE, $tag = NULL)
 	{
+		if ($this->isClosure($definition)) {
+			$definition = Closure::bind($definition, $this->di);
+		}
+
 		$service = $this->di->set($name, $definition, $shared);
 
 		if ($tag) {
@@ -70,6 +75,10 @@ class Container
 	 */
 	public function setShared($name, $definition, $tag = NULL)
 	{
+		if ($this->isClosure($definition)) {
+			$definition = Closure::bind($definition, $this->di);
+		}
+
 		$service = $this->di->setShared($name, $definition);
 
 		if ($tag) {
@@ -147,5 +156,14 @@ class Container
 		$this->tagMap[$tag] = array_unique($tags);
 
 		return $this;
+	}
+
+	/**
+	 * @param mixed $definition
+	 * @return bool
+	 */
+	private function isClosure($definition)
+	{
+		return is_object($definition) && $definition instanceof Closure;
 	}
 }
