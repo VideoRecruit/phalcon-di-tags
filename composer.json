@@ -9,5 +9,13 @@
             "name": "Lukas Tomek",
             "email": "tomeklukas@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "VideoRecruit\\": "src/"
+        },
+        "classmap": [
+            "src/Phalcon/DI/exceptions.php"
+        ]
+    }
 }
