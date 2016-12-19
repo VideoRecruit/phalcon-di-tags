@@ -144,7 +144,7 @@ class Container
 		}
 
 		$tags[] = $serviceName;
-		$this->tagMap = array_unique($tags);
+		$this->tagMap[$tag] = array_unique($tags);
 
 		return $this;
 	}
