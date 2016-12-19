@@ -1,0 +1,13 @@
+{
+    "name": "videorecruit/phalcon-di-tags",
+    "type": "library",
+    "description": "Dependency container wrapper for Phalcon Framework which allows services to be tagged and searched for.",
+    "keywords": ["phalcon", "dependency", "injection"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lukas Tomek",
+            "email": "tomeklukas@gmail.com"
+        }
+    ]
+}
