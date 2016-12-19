@@ -11,12 +11,12 @@ use Phalcon\DiInterface;
  *
  * @package VideoRecruit\Phalcon\DI
  *
- * @method ServiceInterface attempt(string $name, mixed $definition, bool $shared)
- * @method mixed get(string $name, array $parameters)
+ * @method ServiceInterface attempt(string $name, mixed $definition, bool $shared = FALSE)
+ * @method mixed get(string $name, array $parameters = NULL)
  * @method mixed getRaw(string $name)
  * @method ServiceInterface getService(string $name)
  * @method ServiceInterface[] getServices()
- * @method mixed getShared(string $name, array $parameters)
+ * @method mixed getShared(string $name, array $parameters = NULL)
  * @method bool has(string $name)
  * @method void remove(string $name)
  * @method bool wasFreshInstance()
