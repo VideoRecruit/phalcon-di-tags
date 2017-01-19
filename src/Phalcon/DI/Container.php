@@ -135,7 +135,7 @@ class Container
 	public function __call($name, $arguments)
 	{
 		if (!method_exists($this, $name)) {
-			return call_user_func_array([$this->di, $name], $arguments);
+			return $this->di->{$name}(...$arguments);
 		}
 	}
 
