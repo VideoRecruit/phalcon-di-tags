@@ -10,6 +10,10 @@
             "email": "tomeklukas@gmail.com"
         }
     ],
+    "require": {
+        "php": ">=5.6",
+        "ext-phalcon": "*"
+    },
     "autoload": {
         "psr-4": {
             "VideoRecruit\\": "src/"
